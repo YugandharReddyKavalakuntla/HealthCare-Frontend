@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+  <div class="card shadow p-4">
+    <h2>Welcome {{ username }}</h2>
+
+    <p>Role: {{ role }}</p>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-body">
+      <h2 class="mb-4">Dashboard</h2>
+      <hr />
+
+      @if (role === 'Admin') {
+        <div class="mt-4">
+          <h4 class="text-danger">Admin Panel</h4>
+          <!-- <button class="btn btn-dark" routerLink="/admin-dashboard">Admin Dashboard</button> -->
+
+          <button class="btn btn-primary me-2" routerLink="/manage-doctors">Manage Doctors</button>
+
+          <button class="btn btn-secondary me-2" routerLink="/manage-patients">
+            Manage Patients
+          </button>
+
+          <button class="btn btn-warning me-2" routerLink="/admin-dashboard">
+            View Appointments
+          </button>
+
+          <button class="btn btn-success me-2" routerLink="/pending-doctors">
+            Pending Doctors
+          </button>
+        </div>
+      }
+
+      @if (role === 'Patient') {
+        <div class="mt-4">
+          <h4 class="text-success">Patient Panel</h4>
+
+          <button class="btn btn-success me-2" routerLink="/doctors">Book Appointment</button>
+
+          <button class="btn btn-info" routerLink="/my-appointments">My Appointments</button>
+
+          <button class="btn btn-secondary me-2" routerLink="/update-patient-profile">
+            Update Profile
+          </button>
+        </div>
+      }
+
+      @if (role === 'Doctor') {
+        <div class="mt-4">
+          <h4 class="text-warning">Doctor Panel</h4>
+
+          <button class="btn btn-warning me-2" routerLink="/doctor-appointments">
+            View Appointments
+          </button>
+
+          <!-- <button class="btn btn-secondary">Update Status</button> -->
+          <button class="btn btn-secondary me-2" routerLink="/update-doctor-profile">
+            Update Profile
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</div>

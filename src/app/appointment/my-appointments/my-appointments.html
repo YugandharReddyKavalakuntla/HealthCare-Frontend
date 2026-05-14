@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <h2>My Appointments</h2>
+
+  <button class="btn btn-secondary mb-3" routerLink="/dashboard">← Back</button>
+
+  <hr />
+
+  <div class="alert alert-info" *ngIf="appointments.length === 0">No appointments found</div>
+
+  <div class="card mb-3 shadow" *ngFor="let appointment of appointments">
+    <div class="card-body">
+      <h5>Appointment #{{ appointment.id }}</h5>
+
+      <p>
+        <strong> Doctor ID: </strong>
+
+        {{ appointment.doctorId }}
+      </p>
+
+      <p>
+        <strong> Status: </strong>
+
+        {{ appointment.status }}
+      </p>
+
+      <p>
+        <strong> Date: </strong>
+
+        {{ appointment.appointmentDate }}
+      </p>
+
+      <button
+        *ngIf="appointment.status === 'Booked'"
+        class="btn btn-danger mt-2"
+        (click)="cancelAppointment(appointment.id)"
+      >
+        Cancel Appointment
+      </button>
+    </div>
+  </div>
+</div>

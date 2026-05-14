@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2>Pending Doctors</h2>
+  <br />
+  <button class="btn btn-secondary mb-3" routerLink="/dashboard">← Back</button>
+
+  <hr />
+
+  <div class="card mb-3 shadow" *ngFor="let doctor of doctors">
+    <div class="card-body">
+      <h5>
+        {{ doctor.username }}
+      </h5>
+
+      <p>
+        Role:
+        {{ doctor.role }}
+      </p>
+
+      <button class="btn btn-success" (click)="approveDoctor(doctor.id)">Approve</button>
+    </div>
+  </div>
+
+  <div *ngIf="doctors.length === 0" class="alert alert-info">No approval requests available.</div>
+</div>

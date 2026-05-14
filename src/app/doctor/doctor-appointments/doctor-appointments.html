@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2>Doctor Appointments</h2>
+  <button class="btn btn-secondary mb-3" routerLink="/dashboard">← Back</button>
+
+  <hr />
+
+  <div class="card mb-3 shadow" *ngFor="let appointment of appointments">
+    <div class="card-body">
+      <h5>Appointment #{{ appointment.id }}</h5>
+
+      <p>
+        Patient ID:
+        {{ appointment.patientId }}
+      </p>
+
+      <p>
+        Date:
+        {{ appointment.appointmentDate }}
+      </p>
+
+      <p>
+        Status:
+        <strong>
+          {{ appointment.status }}
+        </strong>
+      </p>
+
+      <button class="btn btn-success me-2" (click)="updateStatus(appointment.id, 'Completed')">
+        Complete
+      </button>
+
+      <button class="btn btn-danger" (click)="updateStatus(appointment.id, 'Cancelled')">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

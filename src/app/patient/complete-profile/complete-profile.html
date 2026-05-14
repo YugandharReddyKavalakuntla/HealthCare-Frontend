@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="card shadow p-4">
+    <h2>Complete Patient Profile</h2>
+
+    <hr />
+
+    <input class="form-control mb-3" placeholder="Name" [(ngModel)]="name" />
+
+    <input type="number" class="form-control mb-3" placeholder="Age" [(ngModel)]="age" />
+
+    <select class="form-select mb-3" [(ngModel)]="gender">
+      <option value="">Select Gender</option>
+
+      <option value="Male">Male</option>
+
+      <option value="Female">Female</option>
+    </select>
+
+    <button class="btn btn-primary" (click)="submitProfile()">Save Profile</button>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <button class="btn btn-secondary mb-3" routerLink="/dashboard">← Back</button>
+
+  <div class="card shadow p-4">
+    <h2>Update Doctor Profile</h2>
+
+
+    <hr />
+
+    <input class="form-control mb-3" placeholder="Doctor Name" [(ngModel)]="doctor.name" />
+
+    <label class="form-label"> Doctor Name </label>
+    <input class="form-control mb-3" [(ngModel)]="doctor.specialization" />
+
+    <label class="form-label"> Specialization </label>
+    <input type="number" class="form-control mb-3" [(ngModel)]="doctor.experience" />
+
+    <label class="form-label"> Experience (Years) </label>
+    <button class="btn btn-primary" (click)="updateProfile()">Update Profile</button>
+  </div>
+</div>

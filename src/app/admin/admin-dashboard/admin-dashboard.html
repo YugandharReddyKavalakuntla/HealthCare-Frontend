@@ -1,0 +1,86 @@
+<div class="container mt-4">
+  <h2>Admin Dashboard</h2>
+  <hr />
+
+  <button class="btn btn-secondary mb-3" routerLink="/dashboard">← Back </button>
+
+  <hr />
+
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="card bg-primary text-white">
+        <div class="card-body">
+          <h5>Total</h5>
+
+          <h2>
+            {{ totalAppointments }}
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-success text-white">
+        <div class="card-body">
+          <h5>Completed</h5>
+
+          <h2>
+            {{ conformedAppointments }}
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-danger text-white">
+        <div class="card-body">
+          <h5>Cancelled</h5>
+
+          <h2>
+            {{ cancelledAppointments }}
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-warning">
+        <div class="card-body">
+          <h5>Booked</h5>
+
+          <h2>
+            {{ bookedAppointments }}
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4>All Appointments</h4>
+
+  <div class="card mb-3 shadow" *ngFor="let appointment of appointments">
+    <div class="card-body">
+      <p>
+        Appointment ID:
+        {{ appointment.id }}
+      </p>
+
+      <p>
+        Patient ID:
+        {{ appointment.patientId }}
+      </p>
+
+      <p>
+        Doctor ID:
+        {{ appointment.doctorId }}
+      </p>
+
+      <p>
+        Status:
+        <strong>
+          {{ appointment.status }}
+        </strong>
+      </p>
+    </div>
+  </div>
+</div>

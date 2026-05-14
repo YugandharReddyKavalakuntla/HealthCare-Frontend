@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div class="card shadow p-4">
+    <h2>Complete Doctor Profile</h2>
+
+    <hr />
+
+    <input class="form-control mb-3" placeholder="Doctor Name" [(ngModel)]="name" />
+
+    <input class="form-control mb-3" placeholder="Specialization" [(ngModel)]="specialization" />
+
+    <input
+      type="number"
+      class="form-control mb-3"
+      placeholder="Experience"
+      [(ngModel)]="experience"
+    />
+
+    <button class="btn btn-primary" (click)="submitProfile()">Save Profile</button>
+  </div>
+</div>

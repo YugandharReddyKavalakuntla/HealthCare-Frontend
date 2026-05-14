@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <button class="btn btn-secondary mb-3" routerLink="/doctors">← Back</button>
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow">
+        <div class="card-body">
+          <h3 class="mb-4 text-center">Book Appointment</h3>
+
+          <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+            <!-- Appointment Date -->
+            <div class="mb-3">
+              <label class="form-label"> Appointment Date </label>
+
+              <input
+                type="datetime-local"
+                class="form-control"
+                formControlName="appointmentDate"
+                [min]="minDate"
+              />
+
+              <!-- Validation message -->
+              <div
+                class="text-danger mt-1"
+                *ngIf="
+                  appointmentForm.get('appointmentDate')?.invalid &&
+                  appointmentForm.get('appointmentDate')?.touched
+                "
+              >
+                Appointment date is required
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              class="btn btn-success w-100"
+              type="submit"
+              [disabled]="appointmentForm.invalid"
+            >
+              Confirm Booking
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

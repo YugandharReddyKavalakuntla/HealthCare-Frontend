@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <h2>Manage Patients</h2>
+  <hr />
+  <button class="btn btn-secondary mb-3" routerLink="/dashboard">← Back</button>
+
+  <input
+    type="text"
+    class="form-control mb-3"
+    placeholder="Search patient"
+    [(ngModel)]="searchText"
+  />
+
+  <div class="card mb-3 shadow" *ngFor="let patient of filteredPatients">
+    <div class="card-body">
+      <h5>
+        {{ patient.username }}
+      </h5>
+
+      <p>
+        Role:
+        {{ patient.role }}
+      </p>
+
+      <button class="btn btn-danger" (click)="deletePatient(patient.id)">Delete</button>
+    </div>
+  </div>
+</div>

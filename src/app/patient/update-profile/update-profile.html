@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <button class="btn btn-secondary mb-3" routerLink="/dashboard">← Back</button>
+
+  <div class="card shadow p-4">
+    <h2>Update Patient Profile</h2>
+
+    <hr />
+
+    <label class="form-label"> Name </label>
+    <input class="form-control mb-3" [(ngModel)]="patient.name" />
+
+    <label class="form-label"> Age </label>
+    <input type="number" class="form-control mb-3" [(ngModel)]="patient.age" />
+
+    <label class="form-label"> Gender </label>
+    <select class="form-select mb-3" [(ngModel)]="patient.gender">
+      <option value="Male">Male</option>
+
+      <option value="Female">Female</option>
+    </select>
+
+    <button class="btn btn-primary" (click)="updateProfile()">Update Profile</button>
+  </div>
+</div>
